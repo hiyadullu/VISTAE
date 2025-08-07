@@ -1,0 +1,40 @@
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+from pdf_processor import PDFProcessor
+from quiz_generator import QuizGenerator
+import tempfile
+import os
+
+app = Flask(__name__)
+CORS(app)  # Allow requests from your frontend
+
+@app.route('/generate-quiz', methods=['POST'])
+def generate_quiz():
+    api_key = request.form.get('api_key')
+    num_questions = int(request.form.get('num_questions', 10))
+    file = request.files.get('pdf')
+    if not file or not api_key:
+        return jsonify({'error': 'Missing PDF file or API key'}), 400
+
+    # Save PDF temporarily
+    with tempfile.NamedTemporaryFile(delete=False, suffix='.pdf') as tmp_file:
+        file.save(tmp_file)
+        tmp_file_path = tmp_file.name
+
+    try:
+        # Extract and clean text
+        pdf_processor = PDFProcessor()
+        text = pdf_processor.extract_text(tmp_file_path)
+        cleaned_text = pdf_processor.clean_text(text)
+        # Generate quiz
+        quiz_generator = QuizGenerator(api_key)
+        questions = quiz_generator.generate_quiz_from_text(cleaned_text, num_questions)
+        quiz = [q.__dict__ for q in questions]
+        return jsonify({'questions': quiz})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    finally:
+        os.unlink(tmp_file_path)
+
+if __name__ == '__main__':
+    app.run(port=5000, debug=True)   

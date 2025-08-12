@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Register - Quiz System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Register</h2>
+  <form id="registerForm">
+    <label>Name:</label><br />
+    <input type="text" id="name" required /><br /><br />
+
+    <label>Email:</label><br />
+    <input type="email" id="email" required /><br /><br />
+
+    <label>Password:</label><br />
+    <input type="password" id="password" required /><br /><br />
+
+    <button type="submit">Register</button>
+  </form>
+
+  <p>Already have an account? <a href="login.html">Login here</a></p>
+
+  <script>
+    async function registerUser(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      const response = await fetch('http://127.0.0.1:5000/register', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({name, email, password})
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert('Registration successful! Please login.');
+        window.location.href = 'login.html';
+      } else {
+        alert('Registration failed: ' + data.message);
+      }
+    }
+
+    document.getElementById('registerForm').addEventListener('submit', registerUser);
+  </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+streamlit
+pdfplumber
+sqlalchemy
+sqlite
+pandas
+numpy

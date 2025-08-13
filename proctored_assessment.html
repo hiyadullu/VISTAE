@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proctored Final Assessment</title>
+    <!-- Add your existing CSS styles here -->
+    <style>
+        /* Your existing dashboard styles */
+        
+        .proctored-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .webcam-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 200px;
+            height: 150px;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            z-index: 1000;
+            border: 2px solid rgba(255, 107, 53, 0.5);
+        }
+        
+        .webcam-feed {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .violations-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+        
+        .quiz-question-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        
+        .option-button {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .option-button:hover {
+            background: rgba(178, 53, 255, 0.2);
+            border-color: rgba(178, 53, 255, 0.5);
+        }
+        
+        .option-button.selected {
+            background: rgba(178, 53, 255, 0.3);
+            border-color: rgba(178, 53, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="proctored-container">
+        <!-- Webcam feed -->
+        <div class="webcam-container">
+            <video id="webcamFeed" class="webcam-feed" autoplay muted></video>
+        </div>
+        
+        <!-- Violations panel -->
+        <div class="violations-panel" id="violationsPanel">
+            <h4>⚠️ Proctoring Alerts</h4>
+            <div id="violationsList"></div>
+        </div>
+        
+        <!-- Quiz content will be loaded here -->
+        <div id="quizContent">
+            <!-- Initial upload form -->
+            <div id="uploadSection">
+                <h2>📋 Final Proctored Assessment</h2>
+                <p>This assessment is monitored using AI proctoring technology.</p>
+                
+                <div class="file-upload-section">
+                    <input type="file" id="pdfInput" accept=".pdf" style="display: none;">
+                    <button onclick="document.getElementById('pdfInput').click()">
+                        Upload PDF for Assessment
+                    </button>
+                </div>
+                
+                <button id="startAssessment" style="display: none;">
+                    Start Proctored Assessment
+                </button>
+            </div>
+            
+            <!-- Quiz questions will appear here -->
+            <div id="questionSection" style="display: none;"></div>
+        </div>
+    </div>
+    
+    <canvas id="webcamCanvas" style="display: none;"></canvas>
+    
+    <script src="proctored_assessment.js"></script>
+</body>
+</html>

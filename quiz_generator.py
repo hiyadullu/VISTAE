@@ -5,11 +5,6 @@ from typing import List, Dict
 from dataclasses import dataclass
 from collections import Counter
 
-
-
-
-
-
 # Download required NLTK data (run once)
 try:
     nltk.data.find('tokenizers/punkt')

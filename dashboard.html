@@ -13,7 +13,12 @@
 
         body {
             font-family: 'Courier New', Courier, monospace;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%, #0a0a0a 100%);
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.1) 0%, rgba(26, 26, 26, 0.1) 25%, rgba(42, 42, 42, 0.1) 50%, rgba(26, 26, 26, 0.1) 75%, rgba(10, 10, 10, 0.1) 100%), 
+                        url('snoopy.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
             color: #ffffff;
             min-height: 100vh;
             overflow-x: hidden;
@@ -47,7 +52,7 @@
             padding: 32px 28px 48px;
             font-size: 28px;
             font-weight: 700;
-            background: linear-gradient(135deg, #a735ff 0%, #8a1ef7 50%, #ff02f2 100%);
+            background: linear-gradient(135deg, #5B21B6 0%, #EC4899 50%, #5B21B6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -127,13 +132,13 @@
 
         .nav-item.active {
             background: linear-gradient(135deg, 
-                rgba(191, 53, 255, 0.15) 0%, 
-                rgba(204, 30, 247, 0.2) 50%,
-                rgba(112, 2, 255, 0.15) 100%);
+                rgba(91, 33, 182, 0.2) 0%, 
+                rgba(236, 72, 153, 0.15) 50%,
+                rgba(91, 33, 182, 0.2) 100%);
             color: #ffffff;
-            border: 1px solid rgba(151, 53, 255, 0.3);
+            border: 1px solid rgba(236, 72, 153, 0.3);
             box-shadow: 
-                0 8px 32px rgba(242, 53, 255, 0.15),
+                0 8px 32px rgba(236, 72, 153, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
@@ -336,16 +341,12 @@
         .card h3 {
             font-size: 20px;
             font-weight: 700;
-            color: #ffffff;
+            color: #EC4899;
             margin-bottom: 12px;
-            background: linear-gradient(135deg, #b235ff, #f71ede);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .card p {
-            color: rgba(255, 255, 255, 0.7);
+            color: #F1F5F9;
             line-height: 1.6;
             margin-bottom: 16px;
             font-size: 14px;
@@ -365,7 +366,7 @@
         .stat-number {
             font-size: 24px;
             font-weight: 700;
-            color: #a735ff;
+            color: #0EA5E9;
             display: block;
         }
 
@@ -534,7 +535,10 @@
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
-            <div class="logo">VISTAE</div>
+            <div class="logo">
+                
+                   VISTAE
+            </div>
             <div class="nav-section">
                 <div class="nav-main">
                     <div class="nav-item active" onclick="switchSection('dashboard')">
@@ -565,7 +569,7 @@
         <div class="main-content">
             <!-- Dashboard Section -->
             <div class="content-section active" id="dashboard-section">
-                <h1 style="font-size: 32px; margin-bottom: 32px; background: linear-gradient(135deg, #b235ff, #f71ede); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Welcome to VISTAE Dashboard</h1>
+                <h1 style="font-size: 32px; margin-bottom: 32px; background: linear-gradient(135deg, #5B21B6 0%, #EC4899 50%, #5B21B6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Welcome to VISTAE Dashboard</h1>
                 
                 <div class="dashboard-grid">
                     <div class="card" onclick="toggleCard(this)">

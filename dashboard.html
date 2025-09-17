@@ -199,23 +199,22 @@
 
         .icon-user::before {
             content: '';
-            width: 8px;
-            height: 8px;
+            width: 12px;
+            height: 12px;
             background: currentColor;
             border-radius: 50%;
             position: absolute;
-            top: 2px;
-            left: 4px;
         }
 
         .icon-user::after {
             content: '';
             width: 16px;
-            height: 10px;
+            height: 8px;
             background: currentColor;
-            border-radius: 10px 10px 0 0;
+            border-radius: 8px 8px 0 0;
             position: absolute;
-            bottom: 2px;
+            top: 12px;
+            left: 0;
         }
 
         .icon-settings::before {
@@ -223,13 +222,33 @@
             width: 16px;
             height: 16px;
             background: currentColor;
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            border-radius: 50%;
             position: absolute;
+        }
+
+        .icon-settings::after {
+            content: '';
+            width: 2px;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.3);
+            position: absolute;
+            top: 2px;
+            left: 7px;
+            box-shadow: 
+                0 4px 0 rgba(0, 0, 0, 0.3),
+                0 8px 0 rgba(0, 0, 0, 0.3),
+                0 12px 0 rgba(0, 0, 0, 0.3),
+                4px 0 0 rgba(0, 0, 0, 0.3),
+                8px 0 0 rgba(0, 0, 0, 0.3),
+                12px 0 0 rgba(0, 0, 0, 0.3),
+                4px 4px 0 rgba(0, 0, 0, 0.3),
+                8px 8px 0 rgba(0, 0, 0, 0.3),
+                12px 12px 0 rgba(0, 0, 0, 0.3);
         }
 
         .icon-assessment::before {
             content: '';
-            width: 14px;
+            width: 16px;
             height: 16px;
             background: currentColor;
             border-radius: 2px;
@@ -238,296 +257,61 @@
 
         .icon-assessment::after {
             content: '';
-            width: 8px;
+            width: 12px;
             height: 2px;
             background: rgba(0, 0, 0, 0.3);
             position: absolute;
-            top: 3px;
-            left: 3px;
-            box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3), 0 6px 0 rgba(0, 0, 0, 0.3), 0 9px 0 rgba(0, 0, 0, 0.3);
-        }
-
-        .upgrade-section {
-            margin-top: auto;
-            padding: 20px 12px 32px;
-        }
-
-        .upgrade-card {
-            background: linear-gradient(135deg, 
-                rgba(59, 130, 246, 0.15) 0%, 
-                rgba(139, 92, 246, 0.2) 50%,
-                rgba(168, 85, 247, 0.15) 100%);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 16px;
-            padding: 24px 20px;
-            text-align: center;
-            color: white;
-            backdrop-filter: blur(20px);
+            top: 4px;
+            left: 2px;
             box-shadow: 
-                0 8px 32px rgba(139, 92, 246, 0.15),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        }
-
-        .upgrade-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(168, 85, 247, 0.3));
-            border-radius: 12px;
-            margin: 0 auto 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .upgrade-icon::before {
-            content: '';
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(135deg, #8b5cf6, #a855f7);
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-        }
-
-        .upgrade-button {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(168, 85, 247, 0.3));
-            border: 1px solid rgba(139, 92, 246, 0.4);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            margin-top: 16px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            font-size: 13px;
-        }
-
-        .upgrade-button:hover {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(168, 85, 247, 0.4));
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.2);
+                0 3px 0 rgba(0, 0, 0, 0.3),
+                0 6px 0 rgba(0, 0, 0, 0.3),
+                0 9px 0 rgba(0, 0, 0, 0.3);
         }
 
         /* Main Content */
         .main-content {
             flex: 1;
             margin-left: 280px;
-            padding: 32px 40px;
-            background: linear-gradient(135deg, 
-                rgba(10, 10, 10, 0.8) 0%, 
-                rgba(20, 20, 20, 0.9) 25%,
-                rgba(31, 12, 33, 0.95) 50%,
-                rgba(33, 12, 43, 0.9) 75%,
-                rgba(86, 0, 99, 0.8) 100%);
+            padding: 32px;
+            overflow-y: auto;
         }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
         }
 
-        .header-title {
-            font-size: 32px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.5px;
+        .content-section.active {
+            display: block;
         }
 
-        .header-icons {
-            display: flex;
-            gap: 12px;
-            align-items: center;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .header-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.08) 0%, 
-                rgba(255, 255, 255, 0.12) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(20px);
-            position: relative;
-        }
-
-        .header-icon:hover {
-            background: linear-gradient(135deg, 
-                rgba(184, 53, 255, 0.15) 0%, 
-                rgba(200, 30, 247, 0.2) 100%);
-            border-color: rgba(218, 53, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .header-icon.chat::before {
-            content: '';
-            width: 16px;
-            height: 12px;
-            background: currentColor;
-            border-radius: 6px;
-            position: absolute;
-        }
-
-        .header-icon.chat::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-left: 4px solid transparent;
-            border-right: 4px solid transparent;
-            border-top: 4px solid currentColor;
-            position: absolute;
-            bottom: 10px;
-            left: 8px;
-        }
-
-        .header-icon.notification::before {
-            content: '';
-            width: 14px;
-            height: 16px;
-            background: currentColor;
-            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-            position: absolute;
-        }
-
-        .profile-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            border: 2px solid rgba(139, 92, 246, 0.3);
-            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.25);
-            font-size: 14px;
-        }
-
-        /* Welcome Section */
-        .welcome-section {
-            background: linear-gradient(135deg, 
-                rgba(201, 53, 255, 0.08) 0%, 
-                rgba(204, 30, 247, 0.12) 50%,
-                rgba(230, 2, 255, 0.08) 100%);
-            border: 1px solid rgba(255, 107, 53, 0.15);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 40px;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(20px);
-        }
-
-        .welcome-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 107, 53, 0.03) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .welcome-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .welcome-text h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 8px;
-            letter-spacing: -0.3px;
-        }
-
-        .welcome-text p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 16px;
-        }
-
-        .welcome-illustration {
-            width: 180px;
-            height: 120px;
-            background: linear-gradient(135deg, 
-                rgba(49, 139, 208, 0.2) 0%, 
-                rgba(70, 163, 250, 0.3) 50%,
-                rgba(90, 236, 255, 0.2) 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .welcome-illustration::before {
-            content: '';
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #922ce6, #c2c7f6);
-            border-radius: 50%;
-            position: absolute;
-            opacity: 0.8;
-        }
-
-        /* Overview Section */
-        .overview-section {
-            margin-bottom: 32px;
-        }
-
-        .section-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 24px;
-            letter-spacing: -0.3px;
-        }
-
-        .cards-grid {
+        /* Dashboard Section */
+        .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
+            margin-bottom: 32px;
         }
 
         .card {
             background: linear-gradient(135deg, 
-                rgba(207, 102, 255, 0.453) 0%, 
-                rgba(185, 145, 231, 0.562) 50%,
-                rgba(104, 196, 238, 0.495) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+                rgba(255, 255, 255, 0.08) 0%, 
+                rgba(255, 255, 255, 0.12) 50%,
+                rgba(255, 255, 255, 0.08) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 20px;
-            padding: 28px;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
+            padding: 32px;
             backdrop-filter: blur(20px);
+            position: relative;
             overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
         }
 
         .card::before {
@@ -537,165 +321,60 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.03) 100%);
+            background: linear-gradient(135deg, 
+                rgba(178, 53, 255, 0.03) 0%, 
+                rgba(164, 30, 247, 0.05) 50%,
+                rgba(234, 2, 255, 0.03) 100%);
             pointer-events: none;
         }
 
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .card.quiz-taken {
-            background: linear-gradient(135deg, 
-                rgba(255, 53, 178, 0.238) 0%, 
-                rgba(117, 9, 157, 0.15) 50%,
-                rgba(126, 3, 69, 0.449) 100%);
-            border-color: rgba(255, 53, 161, 0.563);
-        }
-
-        .card.quiz-taken:hover {
-            border-color: rgba(255, 107, 53, 0.5);
-            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.15);
-        }
-
-        .card.daily-streak {
-            background: linear-gradient(135deg, 
-                rgba(118, 34, 197, 0.1) 0%, 
-                rgba(47, 16, 185, 0.15) 50%,
-                rgba(5, 10, 150, 0.1) 100%);
-            border-color: rgba(42, 34, 197, 0.3);
-        }
-
-        .card.daily-streak:hover {
-            border-color: rgba(50, 0, 252, 0.5);
-            box-shadow: 0 20px 60px rgba(34, 197, 94, 0.15);
-        }
-
-        .card.about-us {
-            background: linear-gradient(135deg, 
-                rgba(236, 72, 153, 0.1) 0%, 
-                rgba(219, 39, 119, 0.15) 50%,
-                rgba(190, 24, 93, 0.1) 100%);
-            border-color: rgba(236, 72, 153, 0.3);
-        }
-
-        .card.about-us:hover {
-            border-color: rgba(236, 72, 153, 0.5);
-            box-shadow: 0 20px 60px rgba(236, 72, 153, 0.15);
-        }
-
-        .card.our-team {
-            background: linear-gradient(135deg, 
-                rgba(139, 92, 246, 0.1) 0%, 
-                rgba(124, 58, 237, 0.15) 50%,
-                rgba(109, 40, 217, 0.1) 100%);
-            border-color: rgba(139, 92, 246, 0.3);
-        }
-
-        .card.our-team:hover {
-            border-color: rgba(139, 92, 246, 0.5);
-            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.15);
-        }
-
-        .card-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.1) 0%, 
-                rgba(255, 255, 255, 0.15) 100%);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-        }
-
         .card-content {
-            display: flex;
-            align-items: center;
             position: relative;
             z-index: 1;
         }
 
-        .card-text h3 {
-            font-size: 18px;
+        .card h3 {
+            font-size: 20px;
             font-weight: 700;
-            margin-bottom: 6px;
             color: #ffffff;
-            letter-spacing: -0.2px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #b235ff, #f71ede);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .card-text p {
-            color: rgba(255, 255, 255, 0.6);
+        .card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 16px;
             font-size: 14px;
         }
 
-        /* Card Icons */
-        .card.quiz-taken .card-icon::before {
-            content: '';
-            width: 24px;
-            height: 20px;
-            background: linear-gradient(135deg, #35b5ff, #1e66f7);
-            clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+        .card-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
         }
 
-        .card.daily-streak .card-icon::before {
-            content: '';
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(135deg, #22c55e, #10b981);
-            border-radius: 50%;
-            position: relative;
+        .stat {
+            text-align: center;
         }
 
-        .card.daily-streak .card-icon::after {
-            content: '';
-            width: 8px;
-            height: 12px;
-            border: 2px solid #ffffff;
-            border-left: none;
-            border-top: none;
-            transform: rotate(45deg);
-            position: absolute;
-            top: 18px;
-            left: 22px;
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #a735ff;
+            display: block;
         }
 
-        .card.about-us .card-icon::before {
-            content: '';
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(135deg, #ec4899, #db2777);
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        .stat-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 4px;
         }
 
-        .card.our-team .card-icon::before {
-            content: '';
-            width: 12px;
-            height: 12px;
-            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-            border-radius: 50%;
-            position: absolute;
-            top: 16px;
-            left: 14px;
-        }
-
-        .card.our-team .card-icon::after {
-            content: '';
-            width: 16px;
-            height: 12px;
-            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-            border-radius: 50%;
-            position: absolute;
-            top: 16px;
-            left: 26px;
-        }
-
-        /* Expandable Content */
         .expandable-content {
             margin-top: 24px;
             padding-top: 24px;
@@ -733,360 +412,150 @@
             font-size: 14px;
         }
 
-    /* Generate Quiz Section */
-        /* Only center the quiz section, not all content sections */
-        #quiz-section {
+        /* Quiz Generator Styles */
+        .quiz-generator-container {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100%;
+            min-height: calc(100vh - 200px);
             width: 100%;
         }
-        #quiz-section .quiz-generator {
-            max-width: 800px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
 
-        .instructions-card {
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.08) 0%, 
-                rgba(255, 255, 255, 0.12) 50%,
-                rgba(255, 255, 255, 0.08) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 32px;
-            backdrop-filter: blur(20px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .instructions-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, 
-                rgba(178, 53, 255, 0.03) 0%, 
-                rgba(164, 30, 247, 0.05) 50%,
-                rgba(234, 2, 255, 0.03) 100%);
-            pointer-events: none;
-        }
-        .instructions-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .instructions-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #b235ff, #f71ede);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .instructions-list {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 32px;
-        }
-
-        .instructions-list li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 16px;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .step-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 28px;
-            height: 28px;
-            background: linear-gradient(135deg, #a735ff, #f71ef7);
-            border-radius: 50%;
-            color: white;
-            font-weight: 700;
-            font-size: 14px;
-            margin-right: 16px;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .file-upload-section {
-            background: linear-gradient(135deg, 
-                rgba(144, 53, 255, 0.08) 0%, 
-                rgba(135, 30, 247, 0.12) 50%,
-                rgba(217, 2, 255, 0.08) 100%);
-            border: 2px dashed rgba(235, 53, 255, 0.3);
-            border-radius: 20px;
-            padding: 48px;
+        .quiz-header {
+            margin-bottom: 30px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
         }
 
-        .file-upload-section:hover {
-            border-color: rgba(184, 53, 255, 0.5);
-            background: linear-gradient(135deg, 
-                rgba(208, 53, 255, 0.12) 0%, 
-                rgba(128, 30, 247, 0.16) 50%,
-                rgba(255, 204, 2, 0.12) 100%);
-            transform: translateY(-2px);
-        }
-
-        .file-upload-section.dragover {
-            border-color: rgba(211, 53, 255, 0.8);
-            background: linear-gradient(135deg, 
-                rgba(235, 53, 255, 0.15) 0%, 
-                rgba(211, 30, 247, 0.2) 50%,
-                rgba(48, 2, 255, 0.15) 100%);
-            transform: scale(1.02);
-        }
-
-        .upload-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(247, 147, 30, 0.3));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            border: 2px solid rgba(188, 53, 255, 0.3);
-            position: relative;
-        }
-
-        .upload-icon::before {
-            content: '';
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #ff35f5, #541ef7);
-            clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
-        }
-
-        .upload-text h3 {
-            font-size: 20px;
+        .quiz-title {
+            font-size: 32px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 8px;
         }
 
-        .upload-text p {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 14px;
-            margin-bottom: 24px;
+        .quiz-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 400;
         }
 
-        .file-input {
-            display: none;
-        }
-
-        .upload-button {
-            background: linear-gradient(135deg, #c635ff 0%, #f71ecf 50%, #d902ff 100%);
-            border: none;
-            color: white;
-            padding: 14px 32px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 32px rgba(235, 53, 255, 0.3);
+        .streamlit-container {
             position: relative;
+            width: 100%;
+            height: 800px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
             overflow: hidden;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .upload-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        .streamlit-container iframe {
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .upload-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(181, 53, 255, 0.4);
-        }
-
-        .upload-button:hover::before {
-            left: 100%;
-        }
-
-        .upload-button:active {
-            transform: translateY(0);
-        }
-
-        .file-info {
-            margin-top: 24px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: none;
-        }
-
-        .file-info.show {
-            display: block;
-            animation: slideDown 0.4s ease;
-        }
-
-        .file-details {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 16px;
-        }
-
-        .file-name {
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 16px;
-        }
-
-        .file-size {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 14px;
-        }
-
-        .generate-button {
-            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
             border: none;
-            color: white;
-            padding: 14px 40px;
-            border-radius: 12px;
-            font-weight: 700;
+            border-radius: 16px;
+        }
+
+        .iframe-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            z-index: 10;
+        }
+
+        .iframe-loading .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #a735ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .iframe-loading p {
             font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            box-shadow: 0 8px 32px rgba(34, 197, 94, 0.3);
+            margin-bottom: 8px;
         }
 
-        .generate-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(34, 197, 94, 0.4);
+        .loading-note {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
         }
 
-        .generate-button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
-
 
         @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #b825cc, #f700fb);
-            border-radius: 3px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, #aa42ff, #c55bff);
-        }
-
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .sidebar {
-                transform: translateX(-100%);
-                transition: transform 0.3s;
+                width: 100%;
+                position: relative;
+                height: auto;
             }
 
             .main-content {
                 margin-left: 0;
-                padding: 20px;
+                padding: 16px;
             }
 
-            .welcome-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .welcome-illustration {
-                margin-top: 20px;
-            }
-
-            .cards-grid {
+            .dashboard-grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .card {
+                padding: 24px;
+            }
+
+            .streamlit-container {
+                height: 600px;
             }
         }
     </style>
 </head>
 <body>
-    < class="container">
+    <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
-            <div class="logo" style="display: flex; align-items: center; gap: 14px; margin-bottom: 24px;">
-                <img src="../vistaelogo.png" alt="Logo Icon" style="width: 80px; height: 80px; border-radius:12px; background:none; box-shadow:none;" />
-                <span>Vistae</span>
-            </div>
+            <div class="logo">VISTAE</div>
             <div class="nav-section">
                 <div class="nav-main">
-                    <div class="nav-item active">
+                    <div class="nav-item active" onclick="switchSection('dashboard')">
                         <div class="nav-icon icon-dashboard"></div>
-                        <div class="nav-text">Dashboard</div>
+                        <span class="nav-text">Dashboard</span>
                     </div>
-                    <div class="nav-item">
+                    <div class="nav-item" onclick="switchSection('quiz')">
                         <div class="nav-icon icon-quiz"></div>
-                        <div class="nav-text">Generate Quiz</div>
+                        <span class="nav-text">Generate Quiz</span>
                     </div>
-                    <div class="nav-item">
+                    <div class="nav-item" onclick="switchSection('profile')">
                         <div class="nav-icon icon-user"></div>
-                        <div class="nav-text">Profile</div>
+                        <span class="nav-text">Profile</span>
                     </div>
-                    <div class="nav-item">
+                    <div class="nav-item" onclick="switchSection('settings')">
                         <div class="nav-icon icon-settings"></div>
-                        <div class="nav-text">Settings</div>
+                        <span class="nav-text">Settings</span>
                     </div>
-                    <div class="nav-item">
+                    <div class="nav-item" onclick="switchSection('assessment')">
                         <div class="nav-icon icon-assessment"></div>
-                        <div class="nav-text">Final assessment</div>
-                    </div>
-                </div>
-                
-                <div class="upgrade-section">
-                    <div class="upgrade-card">
-                        <div class="upgrade-icon"></div>
-                        <div style="font-size: 13px; font-weight: 600; margin-bottom: 4px;">Upgrade to Pro</div>
-                        <div style="font-size: 11px; opacity: 0.7; line-height: 1.4;">Get access to premium features</div>
-                        <button class="upgrade-button">Upgrade</button>
+                        <span class="nav-text">Final Assessment</span>
                     </div>
                 </div>
             </div>
@@ -1094,162 +563,191 @@
 
         <!-- Main Content -->
         <div class="main-content">
-            <div class="header" id="pageTitleContainer">
-                <div class="header-title">Dashboard</div>
-                <div class="header-icons">
-                    <div class="header-icon chat"></div>
-                    <div class="header-icon notification"></div>
-                    <div class="profile-icon">AJ</div>
-                </div>
-            </div>
-
+            <!-- Dashboard Section -->
             <div class="content-section active" id="dashboard-section">
-                <!-- Welcome Section -->
-                <div class="welcome-section">
-                    <div class="welcome-content">
-                        <div class="welcome-text">
-                            <h2>Hi, User</h2>
-                            <p>Ready to start your day with some learning?</p>
+                <h1 style="font-size: 32px; margin-bottom: 32px; background: linear-gradient(135deg, #b235ff, #f71ede); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Welcome to VISTAE Dashboard</h1>
+                
+                <div class="dashboard-grid">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-content">
+                            <h3>📚 PDF to Quiz Generator</h3>
+                            <p>Transform your PDF documents into interactive quizzes using advanced AI technology. Upload any PDF and get instant quiz questions.</p>
+                            <div class="card-stats">
+                                <div class="stat">
+                                    <span class="stat-number">AI</span>
+                                    <span class="stat-label">Powered</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">Free</span>
+                                    <span class="stat-label">No API Key</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">Fast</span>
+                                    <span class="stat-label">Instant</span>
+                                </div>
+                            </div>
                         </div>
-                        <div style="display:flex; align-items:center; justify-content:center;">
-                            <img src="../dashboard.png" alt="Welcome" style="width:120px; height: 120px; border-radius:16px; object-fit:cover; background:none; box-shadow:none; border:none;" />
+                        <div class="expandable-content">
+                            <p><strong>Features:</strong></p>
+                            <ul>
+                                <li>Upload PDF files up to 200MB</li>
+                                <li>Generate 5-20 questions automatically</li>
+                                <li>Multiple question types: Fill in the blanks, True/False, Multiple choice</li>
+                                <li>Advanced NLP processing for accurate question generation</li>
+                                <li>Instant results with explanations</li>
+                            </ul>
+                            <p><strong>How to use:</strong></p>
+                            <ol>
+                                <li>Click on "Generate Quiz" in the sidebar</li>
+                                <li>Upload your PDF file</li>
+                                <li>Configure the number of questions</li>
+                                <li>Generate and take your quiz!</li>
+                            </ol>
                         </div>
                     </div>
-                </div>
 
-                <!-- Overview Section -->
-                <div class="overview-section">
-                    <div class="section-title">Overview</div>
-                    <div class="cards-grid">
-                        <div class="card quiz-taken" onclick="toggleCard(this)">
-                            <div class="card-content">
-                                <div class="card-icon"></div>
-                                <div class="card-text">
-                                    <h3>Quiz taken</h3>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-content">
+                            <h3>🎯 Learning Analytics</h3>
+                            <p>Track your learning progress with detailed analytics and performance insights. Monitor your quiz scores and improvement over time.</p>
+                            <div class="card-stats">
+                                <div class="stat">
+                                    <span class="stat-number">85%</span>
+                                    <span class="stat-label">Avg Score</span>
                                 </div>
-                            </div>
-                            <div class="expandable-content">
-                                <p>You have completed 12 quizzes this month with an average score of 85%. Your recent performance shows steady improvement across all subjects.</p>
-                                <div style="margin-top: 12px;">
-                                    <strong>Recent Quizzes:</strong>
-                                    <ul style="margin-top: 8px; padding-left: 20px;">
-                                        <li>Mathematics - 92%</li>
-                                        <li>Science - 88%</li>
-                                        <li>History - 79%</li>
-                                    </ul>
+                                <div class="stat">
+                                    <span class="stat-number">24</span>
+                                    <span class="stat-label">Quizzes</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">+12%</span>
+                                    <span class="stat-label">Improvement</span>
                                 </div>
                             </div>
                         </div>
+                        <div class="expandable-content">
+                            <p><strong>Analytics Features:</strong></p>
+                            <ul>
+                                <li>Performance tracking across all quizzes</li>
+                                <li>Detailed score breakdowns by topic</li>
+                                <li>Progress visualization with charts</li>
+                                <li>Weak area identification</li>
+                                <li>Learning recommendations</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                        <div class="card daily-streak" onclick="toggleCard(this)">
-                            <div class="card-content">
-                                <div class="card-icon"></div>
-                                <div class="card-text">
-                                    <h3>Daily streak</h3>
-                                    <p>Complete</p>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-content">
+                            <h3>🚀 Advanced Features</h3>
+                            <p>Access premium features including custom question types, detailed explanations, and export capabilities for enhanced learning experience.</p>
+                            <div class="card-stats">
+                                <div class="stat">
+                                    <span class="stat-number">3</span>
+                                    <span class="stat-label">Question Types</span>
                                 </div>
-                            </div>
-                            <div class="expandable-content">
-                                <p>Congratulations! You've maintained a 15-day learning streak. Consistency is key to mastering new concepts.</p>
-                                <div style="margin-top: 12px;">
-                                    <strong>Streak Benefits:</strong>
-                                    <ul style="margin-top: 8px; padding-left: 20px;">
-                                        <li>+50 XP bonus daily</li>
-                                        <li>Priority access to new quizzes</li>
-                                        <li>Special achievement badges</li>
-                                    </ul>
+                                <div class="stat">
+                                    <span class="stat-number">PDF</span>
+                                    <span class="stat-label">Export</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">∞</span>
+                                    <span class="stat-label">Unlimited</span>
                                 </div>
                             </div>
                         </div>
+                        <div class="expandable-content">
+                            <p><strong>Advanced Capabilities:</strong></p>
+                            <ul>
+                                <li>Custom question generation algorithms</li>
+                                <li>Export quizzes to PDF format</li>
+                                <li>Share quizzes with others</li>
+                                <li>Detailed answer explanations</li>
+                                <li>Question difficulty adjustment</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                        <div class="card about-us" onclick="toggleCard(this)">
-                            <div class="card-content">
-                                <div class="card-icon"></div>
-                                <div class="card-text">
-                                    <h3>About us</h3>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-content">
+                            <h3>🔧 System Status</h3>
+                            <p>Real-time system status and performance metrics. Monitor server health, response times, and overall system reliability.</p>
+                            <div class="card-stats">
+                                <div class="stat">
+                                    <span class="stat-number">99.9%</span>
+                                    <span class="stat-label">Uptime</span>
                                 </div>
-                            </div>
-                            <div class="expandable-content">
-                                <p>Vistae is a cutting-edge online learning platform designed to make education engaging and accessible. We believe in personalized learning experiences that adapt to your pace and style.</p>
-                                <div style="margin-top: 12px;">
-                                    <strong>Our Mission:</strong>
-                                    <p style="margin-top: 8px;">To revolutionize online education through interactive quizzes, personalized assessments, and comprehensive learning analytics that help students achieve their full potential.</p>
+                                <div class="stat">
+                                    <span class="stat-number">2.1s</span>
+                                    <span class="stat-label">Avg Response</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">🟢</span>
+                                    <span class="stat-label">Status</span>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="card our-team" onclick="toggleCard(this)">
-                            <div class="card-content">
-                                <div class="card-icon"></div>
-                                <div class="card-text">
-                                    <h3>Our team</h3>
-                                </div>
-                            </div>
-                            <div class="expandable-content">
-                                <p>Our passionate team of educators, developers, and designers work together to create the best learning experience for students worldwide.</p>
-                                <div style="margin-top: 12px;">
-                                    <strong>Team Members:</strong>
-                                    <ul style="margin-top: 8px; padding-left: 20px;">
-                                        <li>Sarah Johnson - Head of Education</li>
-                                        <li>Mike Chen - Lead Developer</li>
-                                        <li>Emily Rodriguez - UX Designer</li>
-                                        <li>David Kim - Data Scientist</li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="expandable-content">
+                            <p><strong>System Information:</strong></p>
+                            <ul>
+                                <li>Server uptime: 99.9%</li>
+                                <li>Average response time: 2.1 seconds</li>
+                                <li>Active users: 1,247</li>
+                                <li>Quizzes generated today: 156</li>
+                                <li>System load: 23%</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        <!-- Quiz Generator Section (moved inside main-content) -->
+
+                    <!-- Quiz Generator Section -->
         <div class="content-section" id="quiz-section" style="display:none;">
-            <div class="quiz-generator">
-                <!-- Instructions Card -->
-                <div class="instructions-card">
-                    <div class="instructions-content">
-                        <h2 class="instructions-title">How to Generate Quiz from PDF</h2>
-                        <ul class="instructions-list">
-                            <li>
-                                <span class="step-number">1</span>
-                                <span>Select and upload your PDF document using the upload button below</span>
-                            </li>
-                            <li>
-                                <span class="step-number">2</span>
-                                <span>Our AI will analyze the content and extract key information from your PDF</span>
-                            </li>
-                            <li>
-                                <span class="step-number">3</span>
-                                <span>Click "Generate Quiz" to create questions based on the document content</span>
-                            </li>
-                            <li>
-                                <span class="step-number">4</span>
-                                <span>Review and customize your quiz before sharing it with students</span>
-                            </li>
-                        </ul>
+            <div class="quiz-generator-container">
+                <!-- Title and Subtitle -->
+                <div class="quiz-header">
+                    <h1 class="quiz-title">PDF to Quiz Generator</h1>
+                    <h2 class="quiz-subtitle">Free AI-Powered Quiz Generation</h2>
+                </div>
+
+                <!-- Streamlit App Integration -->
+                <div class="streamlit-container">
+                    <iframe 
+                        id="streamlitFrame" 
+                        src="http://localhost:8501" 
+                        width="100%" 
+                        height="800px" 
+                        frameborder="0"
+                        allow="camera; microphone; geolocation"
+                        sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"
+                        style="border: none; border-radius: 12px; background: #ffffff;">
+                    </iframe>
+                    <div class="iframe-loading" id="iframeLoading">
+                        <div class="spinner"></div>
+                        <p>Loading Quiz Generator...</p>
+                        <p class="loading-note">Make sure the Streamlit app is running on localhost:8501</p>
+                        <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; background: #a735ff; color: white; border: none; border-radius: 8px; cursor: pointer;">Retry</button>
                     </div>
                 </div>
-                <!-- File Upload Section -->
-                <div class="file-upload-section" id="uploadArea">
-                    <div class="upload-icon"></div>
-                    <div class="upload-text">
-                        <h3>Upload Your PDF Document</h3>
-                        <p>Drag and drop your PDF file here, or click to browse</p>
-                    </div>
-                    <input type="file" id="pdfInput" class="file-input" accept=".pdf">
-                    <button class="upload-button" onclick="document.getElementById('pdfInput').click()">
-                        Choose PDF File
-                    </button>
-                    
-                    <div class="file-info" id="fileInfo">
-                        <div class="file-details">
-                            <span class="file-name" id="fileName"></span>
-                            <span class="file-size" id="fileSize"></span>
-                        </div>
-                        <button class="generate-button" id="generateBtn" disabled>
-                            Generate Quiz from PDF
-                        </button>
-                    </div>
-                </div>
+            </div>
+        </div>
+
+            <!-- Profile Section -->
+            <div class="content-section" id="profile-section" style="display:none;">
+                <h1>Profile</h1>
+                <p>Profile section content will go here.</p>
+            </div>
+
+            <!-- Settings Section -->
+            <div class="content-section" id="settings-section" style="display:none;">
+                <h1>Settings</h1>
+                <p>Settings section content will go here.</p>
+            </div>
+
+            <!-- Assessment Section -->
+            <div class="content-section" id="assessment-section" style="display:none;">
+                <h1>Final Assessment</h1>
+                <p>Assessment section content will go here.</p>
             </div>
         </div>
     </div>
@@ -1263,6 +761,7 @@
                 section.classList.remove('active');
                 section.style.display = 'none';
             });
+            
             // Show selected section
             const targetSection = document.getElementById(sectionName + '-section');
             if (targetSection) {
@@ -1271,17 +770,20 @@
                     targetSection.style.display = '';
                 }, 100);
             }
-            // Update title if you have a title element
-            if (document.getElementById('pageTitle')) {
-                const titles = {
-                    'dashboard': 'Dashboard',
-                    'quiz': 'Generate Quiz',
-                    'profile': 'Profile',
-                    'settings': 'Settings',
-                    'assessment': 'Final Assessment'
-                };
-                document.getElementById('pageTitle').textContent = titles[sectionName] || 'Dashboard';
+            
+            // Update active nav item
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Find and activate the corresponding nav item
+            const navItems = document.querySelectorAll('.nav-item');
+            const sections = ['dashboard', 'quiz', 'profile', 'settings', 'assessment'];
+            const index = sections.indexOf(sectionName);
+            if (index !== -1 && navItems[index]) {
+                navItems[index].classList.add('active');
             }
+            
             currentSection = sectionName;
         }
 
@@ -1300,99 +802,62 @@
             }
         }
 
-        // Add click functionality to nav items
-        document.querySelectorAll('.nav-item').forEach(item => {
-            // Use forEach with index to map nav items to sections
-        });
-        document.querySelectorAll('.nav-item').forEach((item, index) => {
-            item.addEventListener('click', function() {
-                document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
-                this.classList.add('active');
-                const sections = ['dashboard', 'quiz', 'profile', 'settings', 'assessment'];
-                switchSection(sections[index]);
+        // Iframe handling for Streamlit integration
+        const streamlitFrame = document.getElementById('streamlitFrame');
+        const iframeLoading = document.getElementById('iframeLoading');
+
+        // Hide loading when iframe loads
+        if (streamlitFrame) {
+            streamlitFrame.addEventListener('load', function() {
+                if (iframeLoading) {
+                    iframeLoading.style.display = 'none';
+                }
             });
-        });
-        // File upload functionality
-        const uploadArea = document.getElementById('uploadArea');
-        const fileInput = document.getElementById('pdfInput');
-        const fileInfo = document.getElementById('fileInfo');
-        const fileName = document.getElementById('fileName');
-        const fileSize = document.getElementById('fileSize');
-        const generateBtn = document.getElementById('generateBtn');
 
-        // Drag and drop functionality
-        uploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadArea.classList.add('dragover');
-        });
-
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.classList.remove('dragover');
-        });
-
-        uploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadArea.classList.remove('dragover');
-            
-            const files = e.dataTransfer.files;
-            if (files.length > 0 && files[0].type === 'application/pdf') {
-                handleFileSelect(files[0]);
-            }
-        });
-
-        // File input change
-        fileInput.addEventListener('change', (e) => {
-            if (e.target.files.length > 0) {
-                handleFileSelect(e.target.files[0]);
-            }
-        });
-
-        function handleFileSelect(file) {
-            fileName.textContent = file.name;
-            fileSize.textContent = formatFileSize(file.size);
-            fileInfo.classList.add('show');
-            generateBtn.disabled = false;
-        }
-
-        function formatFileSize(bytes) {
-            if (bytes === 0) return '0 Bytes';
-            const k = 1024;
-            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-        }
-
-        // Generate quiz button
-        generateBtn.addEventListener('click', async () => {
-            generateBtn.textContent = 'Generating Quiz...';
-            generateBtn.disabled = true;
-            const file = fileInput.files[0];
-            if (!file) return;
-
-            try {
-                const result = await sendPdfToBackend(file);
-                // TODO: Display the quiz in your UI
-                alert('Quiz generated! Check console for questions.');
-                console.log(result.questions);
-            } catch (err) {
-                alert('Failed to generate quiz.');
-            }
-            generateBtn.textContent = 'Generate Quiz from PDF';
-            generateBtn.disabled = false;
-        });
-
-        async function sendPdfToBackend(file) {
-            const formData = new FormData();
-            formData.append('pdf', file);
-            formData.append('api_key', 'YOUR_OPENAI_API_KEY'); // Replace or prompt user
-            formData.append('num_questions', 10); // Or get from user input
-
-            const response = await fetch('http://localhost:5000/generate-quiz', {
-                method: 'POST',
-                body: formData
+            // Show loading if iframe fails to load
+            streamlitFrame.addEventListener('error', function() {
+                if (iframeLoading) {
+                    iframeLoading.innerHTML = `
+                        <div class="spinner"></div>
+                        <p>Failed to load Quiz Generator</p>
+                        <p class="loading-note">Please make sure the Streamlit app is running on localhost:8501</p>
+                        <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; background: #a735ff; color: white; border: none; border-radius: 8px; cursor: pointer;">Retry</button>
+                    `;
+                }
             });
-            return response.json();
         }
+
+        // Check if Streamlit is running
+        function checkStreamlitStatus() {
+            fetch('http://localhost:8501', { mode: 'no-cors' })
+                .then(() => {
+                    // Streamlit is running
+                    if (iframeLoading) {
+                        iframeLoading.style.display = 'none';
+                    }
+                })
+                .catch(() => {
+                    // Streamlit is not running
+                    if (iframeLoading) {
+                        iframeLoading.innerHTML = `
+                            <div class="spinner"></div>
+                            <p>Streamlit app not found</p>
+                            <p class="loading-note">Please start the Streamlit app first by running: python -m streamlit run main.py</p>
+                            <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; background: #a735ff; color: white; border: none; border-radius: 8px; cursor: pointer;">Retry</button>
+                        `;
+                    }
+                });
+        }
+
+        // Check status when quiz section is shown
+        document.addEventListener('DOMContentLoaded', function() {
+            const quizNavItem = document.querySelector('.nav-item[onclick="switchSection(\'quiz\')"]');
+            if (quizNavItem) {
+                quizNavItem.addEventListener('click', function() {
+                    setTimeout(checkStreamlitStatus, 500);
+                });
+            }
+        });
 
         // Enhanced interactions
         document.querySelectorAll('.card').forEach(card => {
@@ -1404,8 +869,6 @@
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
-
-        // Removed parallax effect on cards
 
         // Smooth scroll behavior
         document.documentElement.style.scrollBehavior = 'smooth';

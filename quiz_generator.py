@@ -8,18 +8,14 @@ from collections import Counter
 # Download required NLTK data (run once)
 try:
     nltk.data.find('tokenizers/punkt')
-    nltk.data.find('tokenizers/punkt_tab')
     nltk.data.find('corpora/stopwords')
     nltk.data.find('taggers/averaged_perceptron_tagger')
     nltk.data.find('taggers/averaged_perceptron_tagger_eng')
-
 except LookupError:
-    nltk.data.path.append(r"C:/Users/hiyad/nltk_data")
-    nltk.download('punkt', download_dir=r"C:/Users/hiyad/nltk_data")
-    nltk.download('punkt_tab', download_dir=r"C:/Users/hiyad/nltk_data")
-    nltk.download('stopwords', download_dir=r"C:/Users/hiyad/nltk_data")
-    nltk.download('averaged_perceptron_tagger',download_dir="C:/Users/hiyad/nltk_data")
-    nltk.download('averaged_perceptron_tagger_eng', download_dir="C:/Users/hiyad/nltk_data")
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    nltk.download('averaged_perceptron_tagger')
+    nltk.download('averaged_perceptron_tagger_eng')
 
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize, word_tokenize
